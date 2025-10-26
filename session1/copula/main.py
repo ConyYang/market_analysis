@@ -13,18 +13,20 @@ if __name__ == '__main__':
     length = len(returns)
     x, y = to_u_v(returns, volume)
 
-    # Gaussian Copula
+    print("Gaussian:")
     res_g = gaussian_copula_mle(x, y, length)
     for k, v in res_g.items():
         print(f"{k}: {float(v)}")
+    print("\n")
 
-
-    # Frank Copula
+    print("Frank:")
     res_f = frank_copula_mle(x, y, length)
     for k, v in res_f.items():
         print(f"{k}: {float(v)}")
+    print("\n")
 
-    #Student t Copula
+    print("Student-t:")
     res_f = t_copula_mle(x, y, length)
     for k, v in res_f.items():
         print(f"{k}: {v}")
+    print("\n")

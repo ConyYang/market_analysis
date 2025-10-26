@@ -2,7 +2,7 @@ import numpy as np
 from scipy.optimize import minimize_scalar
 
 def frank_copula_mle(u, v, n):
-    # 2) Frank copula log-likelihood (stable form)
+    # Frank copula log-likelihood (stable form)
     def frank_loglik(theta):
         theta = float(theta)
         if abs(theta) < 1e-10:
@@ -19,7 +19,7 @@ def frank_copula_mle(u, v, n):
                 - 2.0 * np.log(np.abs(D)))
         return np.sum(logc)
 
-    # 3) Maximize log-likelihood over θ (exclude 0)
+    # Maximize log-likelihood over θ (exclude 0)
     # Search on positive and negative ranges; take the best (and compare with θ=0)
     res_pos = minimize_scalar(lambda t: -frank_loglik(t), bounds=(1e-6, 50.0), method="bounded")
     res_neg = minimize_scalar(lambda t: -frank_loglik(t), bounds=(-50.0, -1e-6), method="bounded")
@@ -31,7 +31,7 @@ def frank_copula_mle(u, v, n):
     ]
     theta_hat, ll = max(cand, key=lambda kv: kv[1])
 
-    # 4) Information criteria (k = 1 parameter: θ)
+    # Information criteria (k = 1 parameter: θ)
     k = 1
     aic = 2 * k - 2 * ll
     bic = k * np.log(n) - 2 * ll

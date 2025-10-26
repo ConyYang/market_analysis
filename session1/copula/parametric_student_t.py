@@ -12,7 +12,7 @@ def t_copula_mle(u, v, n):
             - ((nu + 1) / 2) * np.log1p((q * q) / nu)
         )
 
-    # 2) Negative log-likelihood of t-copula
+    # Negative log-likelihood of t-copula
     # Parameterization: a = atanh(ρ), b = log(ν - 2)  ->  ρ in (-1,1), ν > 2
     def neg_ll(params):
         a, b = params
@@ -39,7 +39,7 @@ def t_copula_mle(u, v, n):
 
         return -np.sum(logc)
 
-    # 3) Initialize and optimize
+    # Initialize and optimize
     z1 = norm.ppf(u)
     z2 = norm.ppf(v)
     r0 = np.clip(np.corrcoef(z1, z2)[0, 1], -0.99, 0.99)
@@ -52,7 +52,7 @@ def t_copula_mle(u, v, n):
     nu_hat = 2.0 + np.exp(b_hat)
     ll = -res.fun
 
-    # 4) Information criteria (k = 2: ρ and ν)
+    # Information criteria (k = 2: ρ and ν)
     k = 2
     aic = 2 * k - 2 * ll
     bic = k * np.log(n) - 2 * ll
