@@ -5,7 +5,7 @@ from session1.uni_emp_dist import plot as uni_emp_dist_plot
 from session1.scatter_plot import plot as scatter_plot
 
 if __name__ == '__main__':
-    processed_df = standardize_data("../data/TSLA_data.csv")
+    processed_df = standardize_data("../data_session1/TSLA_data.csv")
     df_clean = processed_df[['Return', 'LogVolume']].dropna()
     returns = df_clean['Return']
     logvol = df_clean['LogVolume']
@@ -20,6 +20,6 @@ if __name__ == '__main__':
     # Task 3: Plot of univariate empirical distributions
     uni_emp_dist_plot(returns, logvol)
 
-    # Task 4: Scatter plot of the integral transformed data
+    # Task 4: Scatter plot of the integral transformed data_session1
     scatter_plot(returns, logvol)
 

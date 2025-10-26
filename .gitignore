@@ -30,7 +30,7 @@ dist/
 # Jupyter checkpoints (if any)
 .ipynb_checkpoints/
 
-# Results / generated data (keep images if you want)
+# Results / generated data_session1 (keep images if you want)
 session1/result/*.csv
 session1/result/*.txt
 session1/result/*.npy
@@ -40,9 +40,10 @@ session1/result/*.pkl
 # session1/result/*.png
 
 # Project-specific
-# (Add any local data files you download for experiments)
+# (Add any local data_session1 files you download for experiments)
 session1/data/
 *.zip
 *.tar.gz
 
-/data
+/data_session1
+/data_session2

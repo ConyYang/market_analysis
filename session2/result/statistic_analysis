@@ -1,0 +1,63 @@
+Summary statistics for Income
+count      608.000000
+mean     10162.309046
+std       3973.923167
+min       4417.400000
+25%       6574.975000
+50%       9934.100000
+75%      12999.125000
+max      20520.000000
+Name: DSPIC96, dtype: float64
+
+Additional metrics:
+Variance: 15792065.339637967
+Skewness: 0.33110310068689774
+Kurtosis: -1.0321670117881558
+
+Summary statistics for Interest Rate
+count    608.00000
+mean       4.68773
+std        3.89017
+min        0.05000
+25%        1.24000
+50%        4.80500
+75%        6.53250
+max       19.10000
+Name: FEDFUNDS, dtype: float64
+
+Additional metrics:
+Variance: 15.133422516908004
+Skewness: 0.9847301316253746
+Kurtosis: 1.2534460520852901
+
+Summary statistics for Unemployment
+count    608.000000
+mean       6.131414
+std        1.774731
+min        3.400000
+25%        4.700000
+50%        5.800000
+75%        7.300000
+max       14.800000
+Name: UNRATE, dtype: float64
+
+Additional metrics:
+Variance: 3.1496704836122427
+Skewness: 0.76927374723632
+Kurtosis: 0.6343433722282024
+
+Summary statistics for Housing Price
+count    202.000000
+mean     268.144752
+std      155.774547
+min       59.650000
+25%      146.415000
+50%      231.730000
+75%      358.167500
+max      703.910000
+Name: USSTHPI, dtype: float64
+
+Additional metrics:
+Variance: 24265.70942406778
+Skewness: 0.9094650220067813
+Kurtosis: 0.39300505686172915

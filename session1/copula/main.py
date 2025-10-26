@@ -6,7 +6,7 @@ from session1.process_file import standardize_data
 
 # Task 5
 if __name__ == '__main__':
-    processed_df = standardize_data("../../data/TSLA_data.csv")
+    processed_df = standardize_data("../../data_session1/TSLA_data.csv")
     df_clean = processed_df[['Return', 'LogVolume']].dropna()
     returns = df_clean['Return'].to_numpy()
     volume  = df_clean['LogVolume'].to_numpy()
