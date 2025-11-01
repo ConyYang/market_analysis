@@ -52,8 +52,19 @@ def time_series_plot(model):
     plt.savefig('time_series_plot.png')
 
 
+def VIF(data: str):
+    from statsmodels.stats.outliers_influence import variance_inflation_factor
+    df = pd.read_csv(data)
+    X_no_const = df[['InterestRate', 'Income', 'Unemployment']]
+    vif_data = pd.DataFrame()
+    vif_data['Variable'] = X_no_const.columns
+    vif_data['VIF'] = [variance_inflation_factor(X_no_const.values, i) for i in range(X_no_const.shape[1])]
+    print(vif_data)
+
+
 if __name__ == '__main__':
-    model = create_model("../data_session2/merged_housing_macro.csv")
+    data_path = '../data_session2/merged_housing_macro.csv'
+    # model = create_model(data_path)
 
     # report(model)
 
@@ -63,4 +74,7 @@ if __name__ == '__main__':
 
     # hist_plot(model)
 
-    time_series_plot(model)
+    # time_series_plot(model)
+
+    VIF(data_path)
+
