@@ -1,0 +1,32 @@
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:           HousingPrice   R-squared:                       0.949
+Model:                            OLS   Adj. R-squared:                  0.948
+Method:                 Least Squares   F-statistic:                     1219.
+Date:                Sat, 01 Nov 2025   Prob (F-statistic):          2.54e-127
+Time:                        12:00:37   Log-Likelihood:                -1006.1
+No. Observations:                 202   AIC:                             2020.
+Df Residuals:                     198   BIC:                             2033.
+Df Model:                           3
+Covariance Type:            nonrobust
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const         -149.3924     19.195     -7.783      0.000    -187.245    -111.540
+InterestRate     6.7673      0.912      7.418      0.000       4.968       8.566
+Income           0.0415      0.001     42.715      0.000       0.040       0.043
+Unemployment    -5.6141      1.530     -3.669      0.000      -8.632      -2.596
+==============================================================================
+Omnibus:                        9.873   Durbin-Watson:                   0.123
+Prob(Omnibus):                  0.007   Jarque-Bera (JB):                9.903
+Skew:                           0.501   Prob(JB):                      0.00707
+Kurtosis:                       3.418   Cond. No.                     8.35e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.35e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+R² = 0.9486, Adjusted R² = 0.9478
+AIC = 2020.15, BIC = 2033.38
