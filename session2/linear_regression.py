@@ -29,10 +29,38 @@ def residual_graph(model):
     plt.title('Residuals vs Fitted Values')
     plt.savefig('residual_graph.png')
 
+def qq_plot(model):
+    import statsmodels.api as sm
+    residuals = model.resid
+    sm.qqplot(residuals, line='45', fit=True)
+    plt.title('QQ Plot of Residuals')
+    plt.savefig('qq_plot.png')
+
+def hist_plot(model):
+    residuals = model.resid
+    plt.hist(residuals, bins=30, edgecolor='k')
+    plt.xlabel('Residuals')
+    plt.title('Distribution of Residuals')
+    plt.savefig('hist_plot.png')
+
+def time_series_plot(model):
+    residuals = model.resid
+    plt.plot(residuals)
+    plt.title('Residuals over Time')
+    plt.xlabel('Observation Index')
+    plt.ylabel('Residual')
+    plt.savefig('time_series_plot.png')
+
+
 if __name__ == '__main__':
     model = create_model("../data_session2/merged_housing_macro.csv")
 
     # report(model)
-    residual_graph(model)
 
+    # residual_graph(model)
 
+    # qq_plot(model)
+
+    # hist_plot(model)
+
+    time_series_plot(model)
